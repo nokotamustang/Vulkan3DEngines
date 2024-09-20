@@ -131,9 +131,11 @@ Since Brendan doesn't focus on VS2022 or Windows I needed to setup my system fir
     -   In **_Configuration Properties > General_** change the **_Output Directory_** to `$(SolutionDir)build\$(Configuration)\$(Platform)\`.
     -   In **_Configuration Properties > General_** change the **_Intermediate Directory_** to `$(SolutionDir)intermediate\$(Configuration)\$(Platform)\`.
 
-    This will create a build folder in the solution directory where all build files are stored.
+    This will create a build folder in the solution directory where all build files are stored, and an intermediate folder where all temporary files are stored.
 
 ## Additional support for GLSL Shader Programs
+
+We can use some tools to help write GLSL and compile them to SPIR-V automatically. This is a simple setup to get started.
 
 1.  Install GLSL language support with this extension: <https://github.com/danielscherzer/GLSL/releases> and restart Visual Studio.
 
