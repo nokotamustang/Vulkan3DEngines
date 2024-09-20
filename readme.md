@@ -1,6 +1,8 @@
 # Vulkan 3D Engine in C++ / Visual Studio 2022
 
-This is a simple 3D engine using Vulkan API in C++ and Visual Studio 2022 on Windows. It is based on the Vulkan Tutorial by Brendan Galea.
+This is a simple 3D engine using Vulkan API in C++ and Visual Studio 2022 on Windows. It is based on the Vulkan Tutorial by Brendan Galea: <https://www.youtube.com/playlist?list=PL8327DO66nu9qYVKLDmdLW_84-yE4auCR>.
+
+There will be additional projects and after I progress further.
 
 ## VS2022 Project Setup Instructions for Vulkan and GLFW
 
@@ -181,8 +183,10 @@ Since Brendan doesn't focus on VS2022 or Windows I needed to setup my system fir
 
 ## Example Engine Projects
 
-1. Vulkan3DEngineHelloWorld is a bare-bones GLFW window with Vulkan test from Brendan Galea's tutorial.
+1. Vulkan3DEngineHelloWorld is a bare-bones GLFW window with Vulkan test.
 
-2. Vulkan3DEngineTriangle is a simple triangle rendered with Vulkan using a vertex and fragment shader and continuing from the previous project.
+2. Vulkan3DEngineTriangle is a simple triangle rendered with Vulkan using a vertex and fragment shader from Brendan Galea's tutorial (up to part 5).
 
-3. Vulkan3DEngine is the final demonstration project with of a simple 3D engine using Vulkan, is the final project from Brendan Galea's tutorial. **Note I have not yet finished the series, so this is a work in progress.**
+3. ... to be continued.
+
+4. Vulkan3DEngine will be the final demonstration project with of a simple 3D engine using Vulkan. **Note I have not yet finished the series, so this is a work in progress.** As it stands this will be the current progress where I am at.
