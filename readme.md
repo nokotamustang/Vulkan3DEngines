@@ -170,9 +170,9 @@ We can use some tools to help write GLSL and compile them to SPIR-V automaticall
 
     Make sure to change the source of the `/Bin/glslc.exe` to the path of your Vulkan SDK installation.
 
-    If you run this batch file, it will compile all `.vert`, `.geom`, and `.frag` files to `.spv` files. You can try this with to compile the `simple.frag.spv` file.
+    If you run this batch file, it will compile all `.vert`, `.geom`, and `.frag` files to `.spv` files. Try this by running the script in a console and verify that the `simple.frag.spv` file is created.
 
-    The flag `#extension GL_KHR_vulkan_glsl : enable` will configure the GLSL language support we installed in step 1 to lint correctly with Vulkan features, but will produce warnings in the glslc compiler which can be ignored. Pick your poison.
+    The flag `#extension GL_KHR_vulkan_glsl : enable` will configure the GLSL language support we installed in step 1 to lint correctly with Vulkan features, but will produce warnings in the glslc compiler which can be ignored. Pick your poison here.
 
 4.  I added this to **\_Build Events > Post-Build Event > Command Line** in the project properties:
 
@@ -181,9 +181,11 @@ We can use some tools to help write GLSL and compile them to SPIR-V automaticall
     call shader_compile.bat
     ```
 
-    Note that it will only run on a rebuild and not on a build if nothing has changed in your source files.
+    Note that it will only run on a rebuild and not on a build if nothing has changed in your source files, but it is handy for automatic compiling of the shader programs.
 
 ## Example Engine Projects
+
+These source folders are VS2022 solutions with the following projects that I have been working on:
 
 1. Vulkan3DEngineHelloWorld is a bare-bones GLFW window with Vulkan test.
 
