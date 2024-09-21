@@ -16,8 +16,12 @@ Since Brendan doesn't focus on VS2022 or Windows I needed to setup my system fir
 
 2.  Create a new project in Visual Studio 2022 using c++ and Windows Desktop Wizard.
 
+    -   Name the project.
     -   Select the project folder where you want to access it easily.
-    -   In the next window select the "Empty Project" template, and C++ Console Application.
+    -   I use the checkbox **Place solution and project in the same directory**.
+    -   Click Create.
+    -   Set the Application Type to C++ Console Application.
+    -   Select the "Empty Project" Application Type,
 
 3.  Create a new folder in your project folder called `external`, where we will store third party libraries.
 
