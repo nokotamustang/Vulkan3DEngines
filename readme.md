@@ -40,14 +40,14 @@ Since Brendan doesn't focus on VS2022 or Windows I needed to setup my system fir
         ├── glfw/
         │   ├── include/
         │   │   └── GLFW/
-        │   │       └glfw3.h ... etc
+        │   │           └glfw3.h ... etc
         │   └── lib-vc2022/
-        │           └glfw3.lib ... etc
+        │               └glfw3.lib ... etc
         ├── glm/
         │   └── common.hpp ... etc
         └── vulkan/
             ├── Include/
-            |      └── vulkan/ ... glm/ ... sdl2/ ... etc
+            │       └── vulkan/ ... glm/ ... sdl2/ ... etc
             └── Lib/
                 └── vulkan-1.lib ... etc
 
@@ -135,7 +135,7 @@ Since Brendan doesn't focus on VS2022 or Windows I needed to setup my system fir
 
 ## Additional support for GLSL Shader Programs
 
-We can use some tools to help write GLSL and compile them to SPIR-V automatically. This is a simple setup to get started.
+We can use some tools to help write GLSL and compile them to SPIR-V automatically.
 
 1.  Install GLSL language support with this extension: <https://github.com/danielscherzer/GLSL/releases> and restart Visual Studio.
 
@@ -174,7 +174,7 @@ We can use some tools to help write GLSL and compile them to SPIR-V automaticall
 
     The flag `#extension GL_KHR_vulkan_glsl : enable` will configure the GLSL language support we installed in step 1 to lint correctly with Vulkan features, but will produce warnings in the glslc compiler which can be ignored. Pick your poison here.
 
-4.  I added this to **\_Build Events > Post-Build Event > Command Line** in the project properties:
+4.  I added this to **_Build Events > Post-Build Event > Command Line_** in the project properties:
 
     ```bat
     cd $(ProjectDir)shaders\
