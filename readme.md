@@ -4,6 +4,10 @@ This is a simple 3D engine using Vulkan API in C++ and Visual Studio 2022 on Win
 
 There will be additional projects and after I progress further.
 
+So far we have the hello triangle equivalent in Vulkan with GLFW and Vulkan SDK.
+
+![Nokota Mustang 3](./screenshots/vulkan_1.PNG)
+
 ## VS2022 Project Setup Instructions for Vulkan and GLFW
 
 Since Brendan doesn't focus on VS2022 or Windows I needed to setup my system first. Here is a step by step guide to setup the project in Visual Studio 2022 on Windows.
