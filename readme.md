@@ -8,17 +8,21 @@ So far we have the hello triangle equivalent in Vulkan with GLFW and Vulkan SDK.
 
 ![Nokota Mustang 3](./screenshots/vulkan_1.PNG)
 
+I have added some instructions to setup the project in Visual Studio 2022 on Windows; in addition I have some custom configuration tips and a batch script for compiling the shaders.
+
 ## VS2022 Project Setup Instructions for Vulkan and GLFW
 
-Since Brendan doesn't focus on VS2022 or Windows I needed to setup my system first. Here is a step by step guide to setup the project in Visual Studio 2022 on Windows.
+Since Brendan doesn't focus on VS2022 or Windows I needed to setup my system first. Here is a step by step guide to setup the project.
 
-1.  Download and install Visual Studio 2022 for <https://visualstudio.microsoft.com>. Install the following workloads: Desktop development with C++. In individual components check for the following:
+1.  Download and install Visual Studio 2022 for <https://visualstudio.microsoft.com>. Install the following workloads: Desktop development with C++.
+  
+3.  In individual components check for the following:
 
     -   C++ CMake tools for Windows
     -   MSBuild
     -   MSVC v144 - VS 2022 C++ x64/x86 build tools (Latest)
 
-2.  Create a new project in Visual Studio 2022 using c++ and Windows Desktop Wizard.
+4.  Create a new project in Visual Studio 2022 using c++ and Windows Desktop Wizard.
 
     -   Name the project.
     -   Select the project folder where you want to access it easily.
@@ -27,9 +31,9 @@ Since Brendan doesn't focus on VS2022 or Windows I needed to setup my system fir
     -   Set the Application Type to C++ Console Application.
     -   Select the "Empty Project" Application Type,
 
-3.  Create a new folder in your project folder called `external`, where we will store third party libraries.
+5.  Create a new folder in your project folder called `external`, where we will store third party libraries.
 
-4.  Download and prepare the following libraries:
+6.  Download and prepare the following libraries:
 
     -   Vulkan SDK: <https://vulkan.lunarg.com/sdk/home>
         -   Install the Vulkan SDK.
@@ -42,7 +46,7 @@ Since Brendan doesn't focus on VS2022 or Windows I needed to setup my system fir
         -   Download the latest release.
         -   Copy the entire `glm` folder to `external`.
 
-5.  The external files directory should look like this:
+7.  The external files directory should look like this:
 
         external/
         ├── glfw/
@@ -59,7 +63,7 @@ Since Brendan doesn't focus on VS2022 or Windows I needed to setup my system fir
             └── Lib/
                 └── vulkan-1.lib ... etc
 
-6.  In Visual Studio, right click on the project and select `Properties`, where we can setup the linker.
+8.  In Visual Studio, right click on the project and select `Properties`, where we can setup the linker.
 
     -   In Configuration select `All Configurations`.
     -   In Platform select `All Platforms`.
@@ -84,7 +88,7 @@ Since Brendan doesn't focus on VS2022 or Windows I needed to setup my system fir
         -   `vulkan-1.lib`
         -   `glfw3.lib`
 
-7.  Building a simple test program:
+9.  Building a simple test program:
 
     -   Create a new file `main.cpp` in the project folder.
     -   Add the following code:
@@ -134,7 +138,7 @@ Since Brendan doesn't focus on VS2022 or Windows I needed to setup my system fir
 
     -   If you see a warning in the build output: **LNK4098: defaultlib MSVCRT conflicts with use of other libs**; then add this to the **_Linker > Command Line > Additional Options_** : `/NODEFAULTLIB:MSVCRT` but only for the Debug configuration and not for the Release configuration (or all configurations).
 
-8.  Optional step, I changed the structure of the build output to separate the build files from the source files.
+10.  Optional step, I changed the structure of the build output to separate the build files from the source files.
 
     -   In **_Configuration Properties > General_** change the **_Output Directory_** to `$(SolutionDir)build\$(Configuration)\$(Platform)\`.
     -   In **_Configuration Properties > General_** change the **_Intermediate Directory_** to `$(SolutionDir)intermediate\$(Configuration)\$(Platform)\`.
@@ -160,7 +164,7 @@ We can use some tools to help write GLSL and compile them to SPIR-V automaticall
     }
     ```
 
-    -   In the Solution Explorer, Resource Files and select `Add > Existing Item...` and add the `frag.spv` file.
+    -   In the Solution Explorer, right click the Resource Files and select `Add > Existing Item...` and add the `frag.spv` file.
 
 3.  Create a file called `shaders/shader_compile.bat` and add it to the resource files. Open this file and enter the batch code:
 
