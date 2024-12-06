@@ -15,14 +15,14 @@ I have added some instructions to setup the project in Visual Studio 2022 on Win
 Since Brendan doesn't focus on VS2022 or Windows I needed to setup my system first. Here is a step by step guide to setup the project.
 
 1.  Download and install Visual Studio 2022 for <https://visualstudio.microsoft.com>. Install the following workloads: Desktop development with C++.
-  
-3.  In individual components check for the following:
+
+2.  In individual components check for the following:
 
     -   C++ CMake tools for Windows
     -   MSBuild
     -   MSVC v144 - VS 2022 C++ x64/x86 build tools (Latest)
 
-4.  Create a new project in Visual Studio 2022 using c++ and Windows Desktop Wizard.
+3.  Create a new project in Visual Studio 2022 using c++ and Windows Desktop Wizard.
 
     -   Name the project.
     -   Select the project folder where you want to access it easily.
@@ -31,9 +31,9 @@ Since Brendan doesn't focus on VS2022 or Windows I needed to setup my system fir
     -   Set the Application Type to C++ Console Application.
     -   Select the "Empty Project" Application Type,
 
-5.  Create a new folder in your project folder called `external`, where we will store third party libraries.
+4.  Create a new folder in your project folder called `external`, where we will store third party libraries.
 
-6.  Download and prepare the following libraries:
+5.  Download and prepare the following libraries:
 
     -   Vulkan SDK: <https://vulkan.lunarg.com/sdk/home>
         -   Install the Vulkan SDK.
@@ -46,7 +46,7 @@ Since Brendan doesn't focus on VS2022 or Windows I needed to setup my system fir
         -   Download the latest release.
         -   Copy the entire `glm` folder to `external`.
 
-7.  The external files directory should look like this:
+6.  The external files directory should look like this:
 
         external/
         ├── glfw/
@@ -63,7 +63,7 @@ Since Brendan doesn't focus on VS2022 or Windows I needed to setup my system fir
             └── Lib/
                 └── vulkan-1.lib ... etc
 
-8.  In Visual Studio, right click on the project and select `Properties`, where we can setup the linker.
+7.  In Visual Studio, right click on the project and select `Properties`, where we can setup the linker.
 
     -   In Configuration select `All Configurations`.
     -   In Platform select `All Platforms`.
@@ -88,7 +88,7 @@ Since Brendan doesn't focus on VS2022 or Windows I needed to setup my system fir
         -   `vulkan-1.lib`
         -   `glfw3.lib`
 
-9.  Building a simple test program:
+8.  Building a simple test program:
 
     -   Create a new file `main.cpp` in the project folder.
     -   Add the following code:
@@ -138,7 +138,7 @@ Since Brendan doesn't focus on VS2022 or Windows I needed to setup my system fir
 
     -   If you see a warning in the build output: **LNK4098: defaultlib MSVCRT conflicts with use of other libs**; then add this to the **_Linker > Command Line > Additional Options_** : `/NODEFAULTLIB:MSVCRT` but only for the Debug configuration and not for the Release configuration (or all configurations).
 
-10.  Optional step, I changed the structure of the build output to separate the build files from the source files.
+9.  Optional step, I changed the structure of the build output to separate the build files from the source files.
 
     -   In **Configuration Properties > General** change the **Output Directory** to:
         `$(SolutionDir)build\$(Configuration)\$(Platform)\`
