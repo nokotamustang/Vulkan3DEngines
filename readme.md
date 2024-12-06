@@ -136,8 +136,10 @@ Since Brendan doesn't focus on VS2022 or Windows I needed to setup my system fir
 
 8.  Optional step, I changed the structure of the build output to separate the build files from the source files.
 
-    -   In **_Configuration Properties > General_** change the **_Output Directory_** to `$(SolutionDir)build\$(Configuration)\$(Platform)\`.
-    -   In **_Configuration Properties > General_** change the **_Intermediate Directory_** to `$(SolutionDir)intermediate\$(Configuration)\$(Platform)\`.
+    -   In **Configuration Properties > General** change the **Output Directory** to:
+        `$(SolutionDir)build\$(Configuration)\$(Platform)\`
+    -   In **Configuration Properties > General** change the **Intermediate Directory** to:
+        `$(SolutionDir)intermediate\$(Configuration)\$(Platform)\`
 
     This will create a build folder in the solution directory where all build files are stored, and an intermediate folder where all temporary files are stored.
 
